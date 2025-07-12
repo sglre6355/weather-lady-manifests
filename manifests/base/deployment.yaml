@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: weather-lady
+spec:
+  selector:
+    matchLabels:
+      app: weather-lady
+  template:
+    metadata:
+      labels:
+        app: weather-lady
+    spec:
+      containers:
+        - name: weather-lady
+          image: ghcr.io/sglre6355/weather-lady
+          envFrom:
+            - secretRef:
+                name: weather-lady
+        - name: web-capture
+          image: ghcr.io/sglre6355/web-capture

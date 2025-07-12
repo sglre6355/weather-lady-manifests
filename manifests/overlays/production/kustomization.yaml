@@ -1,0 +1,7 @@
+resources:
+  - ../../base
+images:
+  - name: ghcr.io/sglre6355/weather-lady
+    newTag: latest
+  - name: ghcr.io/sglre6355/web-capture
+    newTag: latest
