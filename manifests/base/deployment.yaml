@@ -14,8 +14,14 @@ spec:
       containers:
         - name: weather-lady
           image: ghcr.io/sglre6355/weather-lady
+          env:
+            - name: TZ
+              value: Asia/Tokyo
           envFrom:
             - secretRef:
                 name: weather-lady
         - name: web-capture
           image: ghcr.io/sglre6355/web-capture
+          env:
+            - name: TZ
+              value: Asia/Tokyo
